@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "jest --coverage",
+    "coverage": "jest --coverage",
     "start": "webpack serve",
     "prepare": "husky install",
     "lint": "npx eslint src/*.{js,jsx} --fix --color",
@@ -62,5 +63,10 @@
     "*.js": "eslint --fix",
     "*.jsx": "eslint --fix",
     "*.{js,scss,md,jsx}": "npx pretty-quick"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/test/setupTests.js"
+    ]
   }
 }
