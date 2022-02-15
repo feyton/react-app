@@ -3,7 +3,9 @@ import React from 'react';
 export function App() {
   return (
     <div>
-      <button type="button">Hello</button>
+      <button className="btn btn-primary" type="button">
+        Hello
+      </button>
     </div>
   );
 }
