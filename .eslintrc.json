@@ -18,6 +18,7 @@
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "no-underscore-dangle": ["error", { "allow": ["__filename", "__dirname"] }],
     "comma-dangle": ["error", "never"],
+    "import/no-named-as-default": 0,
     "import/extensions": [
       "error",
       "ignorePackages",
