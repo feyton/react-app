@@ -4,14 +4,13 @@ $spanFont: 'Raleway', sans-serif;
 $primaryColor: rgb(34, 34, 34);
 $secColor: rgb(122, 125, 125);
 
-body {
+* {
   box-sizing: border-box;
+  font-family: $textFont;
 }
 
-div {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  font-family: $headFont;
+li {
+  list-style: none;
+  list-style-type: none;
+  text-align: left;
 }
