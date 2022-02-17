@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Lexend:wght@400;600&family=Raleway:wght@300;500&display=swap');
+
+:root {
+  --headFont: 'Lexend';
+  --textFont: 'Josefin Sans', sans-serif;
+  --spanFont: 'Raleway', sans-serif;
+  --primaryColor: rgb(34, 34, 34);
+  --secColor: rgb(122, 125, 125);
+  --Lexend: "Lexend";
+}
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: var(--textFont);
+}
+
+h3,
+h2 {
+  font-family: 'Lexend' !important;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+  text-align: left;
+}

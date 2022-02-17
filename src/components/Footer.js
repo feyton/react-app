@@ -1,27 +1,22 @@
 import React from 'react';
-import './styles/footer.scss';
+import '../styles/footer.css';
 
 function Footer() {
   const handleClick = () => {
     console.log('clicked ');
   };
   return (
-    <footer className="row pt-4">
+    <footer className="row">
       <div className="col-sm-12 col-md-4 about">
         <h3>About Us</h3>
         <p>Our goal is to provide you the best we have to offer</p>
-        <ul className="al-left">
-          <li>
-            <a href="tel:+250787241457" class="text-link">
-              <span>Call Us:</span> + (250) 787 241 457
-            </a>
-          </li>
-          <li>
-            <a href="mailto:info@feyton.co.rw" class="text-link">
-              <span>Email:</span> info@fabrice.com
-            </a>
-          </li>
-        </ul>
+
+        <a href="tel:+250787241457" class="text-link">
+          <span>Call Us:</span> + (250) 787 241 457
+        </a>
+        <a href="mailto:info@feyton.co.rw" class="text-link">
+          <span>Email:</span> info@fabrice.com
+        </a>
       </div>
       <div class="col-sm-12 col-md-4 form">
         <h3>Our NewsLetter</h3>

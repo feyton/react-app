@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './styles/nav.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { loginUser, logoutUser, signupUser } from '../reducers/authReducer.js';
 const profile_avatar =
   'https://res.cloudinary.com/feyton/image/upload/c_scale,w_30/v1643272521/user_nophzu.png';
 
 function Navbar() {
+  const authenticated = false
   return (
-    <nav className="navbar sticky-top navbar-expand-md bg-light justify-content-between">
+    <nav className="navbar sticky-top navbar-expand-md bg-light">
       <div className="navbar-brand">
         <Link to="/">
           <h3>Feyton Inc</h3>
@@ -57,61 +59,59 @@ function Navbar() {
               About Us
             </NavLink>
           </li>
-          <li className="nav-item dropdown ml-5">
-            <a
-              href="#"
-              className="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <img src={profile_avatar} alt="" className="picture-avatar" />
-              <i className="fa fa-chevron-down"></i>
-            </a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li className="dropdown-item">
-                <Link to="/login">Login</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/signup">Signup</Link>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown ml-2">
-            <a
-              href="#here"
-              className="nav-link dropdown-toggle"
-              id="navbarDropdown2"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <img src={profile_avatar} alt="" className="profile-picture" />
-              <i className="fa fa-chevron-down"></i>
-            </a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown2">
-              <li className="dropdown-item">
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-              <li className="dropdown-item">
-                <a
-                  href="#logout"
-                  className="logout"
-                  onClick={(e) => {
-                    handleLogout(e);
-                  }}
-                >
-                  Logout
-                </a>
-              </li>
-            </ul>
-          </li>
+          {authenticated ? (
+            <li className="nav-item dropdown dropdown-menu-end ml-2">
+              <a
+                href="#here"
+                className="nav-link dropdown-toggle"
+                id="navbarDropdown2"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src={profile_avatar} alt="" className="profile-picture" />
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li className="dropdown-item">
+                  <Link to="/profile">Profile</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                <li className="dropdown-item">
+                  <a href="#logout" className="logout">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </li>
+          ) : (
+            <li className="nav-item dropdown">
+              <a
+                href="#"
+                className="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src={profile_avatar} alt="" className="picture-avatar" />
+              </a>
+              <ul
+                className="dropdown-menu dropdown-menu-left"
+                aria-labelledby="navbarDropdown"
+              >
+                <li className="dropdown-item">
+                  <Link to="/login">Login</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/signup">Signup</Link>
+                </li>
+              </ul>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

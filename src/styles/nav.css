@@ -1,0 +1,39 @@
+.nav-item img {
+  width: 50px !important;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+nav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100%;
+}
+
+nav .active {
+  color: black !important;
+}
+
+.navbar-brand {
+  font-family: "Lexend" !important;
+  align-items: center;
+  height: 100%;
+}
+
+nav ul li ul li a {
+  padding: 0 !important;
+  text-align: left;
+}
+
+nav .dropdown-menu {
+  right: 0;
+}
+
+nav .dropdown-menu a {
+  padding: 0;
+}

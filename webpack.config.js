@@ -15,7 +15,9 @@ const config = {
       directory: path.join(__dirname, 'public')
     },
     compress: true,
-    port: 3000
+    port: 3000,
+    historyApiFallback: true,
+    hot: true
   },
   module: {
     rules: [
@@ -29,20 +31,42 @@ const config = {
           }
         }
       },
+      // ...
       {
-        test: /\.scss$/i,
+        test: /\.(scss)$/,
         use: [
-          { loader: 'style-loader' },
-          // [css-loader](/loaders/css-loader)
           {
-            loader: 'css-loader',
+            // inject CSS to page
+            loader: 'style-loader'
+          },
+          {
+            // translates CSS into CommonJS modules
+            loader: 'css-loader'
+          },
+          {
+            // Run postcss actions
+            loader: 'postcss-loader',
             options: {
-              modules: true
+              // `postcssOptions` is needed for postcss 8.x;
+              // if you use postcss 7.x skip the key
+              postcssOptions: {
+                // postcss plugins, can be exported to postcss.config.js
+                plugins: function () {
+                  return [require('autoprefixer')];
+                }
+              }
             }
           },
-          // [sass-loader](/loaders/sass-loader)
-          { loader: 'sass-loader' }
+          {
+            // compiles Sass to CSS
+            loader: 'sass-loader'
+          }
         ]
+      },
+      // ...
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },

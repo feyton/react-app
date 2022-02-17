@@ -6,11 +6,9 @@ import Navbar from '../components/Navbar';
 export function Work() {
   return (
     <>
-      <div className="container-fluid pl-1 lr-1">
-        <Navbar></Navbar>
-        <Hero></Hero>
-        <Footer></Footer>
-      </div>
+      <Navbar></Navbar>
+      <Hero></Hero>
+      <Footer></Footer>
     </>
   );
 }

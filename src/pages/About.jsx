@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 export function About() {
   return (
     <>
-      <div className="container-fluid pl-1 lr-1">
+      <div className="container-fluid px-0">
         <Navbar></Navbar>
         <h3>About</h3>
         <Hero></Hero>

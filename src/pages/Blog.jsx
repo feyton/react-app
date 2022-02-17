@@ -6,12 +6,10 @@ import Navbar from '../components/Navbar';
 export function Blog() {
   return (
     <>
-      <div className="container-fluid pl-1 lr-1">
-        <Navbar></Navbar>
-        <h3>Blog</h3>
-        <Hero></Hero>
-        <Footer></Footer>
-      </div>
+      <Navbar></Navbar>
+      <h3>Blog</h3>
+      <Hero></Hero>
+      <Footer></Footer>
     </>
   );
 }

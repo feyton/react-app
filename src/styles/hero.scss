@@ -3,6 +3,12 @@
     url('https://feyton.github.io/assets/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh !important;
-  text-align: center;
+  font-family: 'Lexend';
+  font-weight: bolder;
+  h3 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
 }
